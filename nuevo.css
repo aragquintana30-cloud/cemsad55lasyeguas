@@ -1,0 +1,1175 @@
+/* ==========================================================================
+   CONFIGURACIÓN BASE DE LA BARRA (Optimizada sin duplicados)
+   ========================================================================== */
+.navbar {
+  display: flex;
+  flex-direction: column;    /* Logo arriba, menú abajo para centrado escolar */
+  align-items: center;       
+  justify-content: center;
+  gap: 1.5rem;               
+  background-color: #0b0f12; 
+  padding: 1.5rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Estilo del Logo */
+.logo {
+  color: #2ecc71; 
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+/* Contenedor de enlaces */
+.nav-links {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;            
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Línea interactiva debajo de los enlaces */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2ecc71, #ff6b1a); 
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  color: #ff6b1a; 
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:active {
+  transform: scale(0.95);
+  color: #2ecc71;
+}
+
+/* ==========================================================================
+   NUEVO: ANIMACIÓN DE ENTRADA SUAVE (Fade-In-Up)
+   ========================================================================== */
+@keyframes aparecerImagen {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza 20px abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Termina en su posición original */
+  }
+}
+
+/* ==========================================================================
+   SECCIÓN DE IMÁGENES (Con transiciones y efectos aplicados)
+   ========================================================================== */
+
+/* Contenedor Responsivo Principal */
+.contenedor-imagen {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  padding: 2rem 0;          
+  width: 100%;              
+}
+
+.contenedor-imagen img {
+  max-width: 100%;          
+  height: auto;             
+  border-radius: 12px;      
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  
+  /* Efecto de aparición al cargar la página */
+  animation: aparecerImagen 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  
+  /* Prepara la imagen para el efecto Zoom hover suave */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+}
+
+/* Efecto hover profesional para la imagen responsiva */
+.contenedor-imagen img:hover {
+  transform: scale(1.03); /* Un zoom muy sutil del 3% */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de Tamaño Fijo (Miniaturas/Galería) */
+.contenedor-foto {
+  width: 300px;
+  height: 200px;
+  overflow: hidden; 
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  
+  /* Efecto de aparición al cargar la página */
+  animation: aparecerImagen 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Imagen dentro del contenedor fijo con su respectivo Zoom interactivo */
+.contenedor-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contenedor-foto:hover img {
+  transform: scale(1.08); /* Zoom del 8% al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+/* Controla el tamaño y la posición del cuadro contenedor */
+.contenedor-video {
+  max-width: 800px;            /* Ancho máximo del video */
+  width: 100%;                 /* Adaptable a pantallas móviles */
+  margin: 20px auto;           /* Centra el video horizontalmente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra decorativa */
+  border-radius: 8px;          /* Esquinas redondeadas */
+  overflow: hidden;            /* Mantiene el video dentro de las esquinas */
+}
+
+/* Fuerza al video a ajustarse perfectamente al div */
+.contenedor-video video {
+  width: 100%;
+  height: auto;                /* Mantiene la proporción de aspecto */
+  display: block;              /* Elimina espacios vacíos inferiores */
+}
+
+
+
+
+
+
+<!-- Contenedor Principal -->
+<div style="font-family: 'Segoe UI', system-ui, sans-serif; color: #1a202c; max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Título Principal de la Sección -->
+    <h1 style="text-align: center; font-size: 2.25rem; font-weight: 700; color: #0f172a; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 0.5px;">
+        ¿Qué hacemos y con qué contamos en la institución?
+    </h1>
+
+    <!-- Contenedor Flexbox para las dos columnas (Escritorio) o filas (Celular) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        
+        <!-- Bloque: CONTAMOS CON -->
+        <div style="flex: 1; min-width: 280px; background-color: #f8fafc; border-left: 4px solid #0284c7; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            <h2 style="font-size: 1.5rem; color: #0284c7; margin-top: 0; margin-bottom: 1rem; font-weight: 600;">
+                CONTAMOS CON:
+            </h2>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                <li style="margin-bottom: 0.5rem;">🔹 Seguro en el IMSS</li>
+                <li style="margin-bottom: 0.5rem;">🔹 Jornadas deportivas</li>
+                <li style="margin-bottom: 0.5rem;">🔹 Jornadas académicas</li>
+                <li style="margin-bottom: 0.5rem;">🔹 Centro de cómputo</li>
+            </ul>
+        </div>
+
+        <!-- Bloque: HACEMOS -->
+        <div style="flex: 1; min-width: 280px; background-color: #f8fafc; border-left: 4px solid #16a34a; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            <h2 style="font-size: 1.5rem; color: #16a34a; margin-top: 0; margin-bottom: 1rem; font-weight: 600;">
+                HACEMOS:
+            </h2>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; line-height: 1.8; color: #334155;">
+                <li style="margin-bottom: 0.5rem;">🔸 Actividad de la paz</li>
+                <li style="margin-bottom: 0.5rem;">🔸 Aniversario de la institución</li>
+                <li style="margin-bottom: 0.5rem;">🔸 Participaciones en desfiles</li>
+                <li style="margin-bottom: 0.5rem;">🔸 Talleres de orientación y temas conmemorativos</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Configuración global con fondo degradado suave */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    margin: 0;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal estilizado como tarjeta corporativa */
+.contenedor-institucion {
+    max-width: 750px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    text-align: center;
+}
+
+/* Título principal con color azul premium */
+.titulo-principal {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin: 0 0 0.5rem 0;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* Subtítulo con color verde/turquesa energético */
+.subtitulo {
+    font-size: 1.4rem;
+    color: #059669; /* Verde esmeralda profesional */
+    margin: 0 0 2.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Distribución de la lista en cuadrícula de dos columnas */
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Diseño base de las tarjetas de beneficios */
+.item-beneficio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Texto interno de los beneficios */
+.item-beneficio .texto {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Área del icono redondo */
+.item-beneficio .icono {
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+/* --- Personalización de Colores por Tarjeta (Efecto Hover) --- */
+
+.item-beneficio.imss:hover {
+    border-color: #ef4444; /* Rojo IMSS/Salud */
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.15);
+    transform: translateY(-4px);
+}
+
+.item-beneficio.deportes:hover {
+    border-color: #3b82f6; /* Azul Deporte */
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+.item-beneficio.academia:hover {
+    border-color: #f59e0b; /* Ámbar Academia */
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
+    transform: translateY(-4px);
+}
+
+.item-beneficio.computo:hover {
+    border-color: #8b5cf6; /* Morado Tecnología */
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Adaptación para pantallas de celulares pequeños */
+@media (max-width: 480px) {
+    .titulo-principal { font-size: 1.7rem; }
+    .contenedor-institucion { padding: 2rem 1rem; }
+}
+
+
+
+
+
+
+
+
+
+/* Contenedor general centrado */
+.seccion-hacemos-contenedor {
+    max-width: 800px;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+/* Título con estilo moderno y línea decorativa inferior */
+.titulo-hacemos {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.titulo-hacemos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border-radius: 2px;
+}
+
+/* Configuración de la cuadrícula adaptativa */
+.lista-hacemos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Diseño base profesional para cada tarjeta */
+.tarjeta-actividad {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.3s ease, 
+                border-color 0.3s ease;
+}
+
+/* Contenedor circular del icono emoji */
+.tarjeta-actividad .icono-tarjeta {
+    font-size: 1.6rem;
+    background-color: #f8fafc;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Estilo para el texto explicativo */
+.tarjeta-actividad .texto-tarjeta {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #334155;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* --- Efectos dinámicos y paleta de colores al pasar el cursor (Hover) --- */
+
+/* Azul cielo para la Paz */
+.tarjeta-actividad.color-paz:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 12px 20px rgba(14, 165, 233, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Rosa mexicano / Fucsia festivo para Aniversario */
+.tarjeta-actividad.color-aniversario:hover {
+    border-color: #d946ef;
+    box-shadow: 0 12px 20px rgba(217, 70, 239, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Naranja brillante / Oro para Desfiles */
+.tarjeta-actividad.color-desfiles:hover {
+    border-color: #f97316;
+    box-shadow: 0 12px 20px rgba(249, 115, 22, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Verde esmeralda educativo para Talleres */
+.tarjeta-actividad.color-talleres:hover {
+    border-color: #10b981;
+    box-shadow: 0 12px 20px rgba(16, 185, 129, 0.15);
+    transform: translateY(-5px);
+}
+
+
+
+
+
+/* Centra el título y todo el contenido de la tarjeta */
+.card-contacto {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+    padding: 2.5rem;
+    border-top: 8px solid #003366;
+    box-sizing: border-box;
+    margin: 0 auto;       /* Centra la tarjeta respecto a la pantalla */
+    text-align: center;   /* Centra todos los textos por defecto */
+}
+
+/* Centra los elementos individuales de la lista */
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center; /* Centra los bloques hijos horizontalmente */
+}
+
+/* Ajusta los bloques grises de cada contacto */
+.tarjeta-item {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 1.2rem;
+    width: 100%;         /* Ocupa el ancho disponible */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los textos internos del bloque */
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-left: none;   /* Quitamos la línea de la esquina para un look más simétrico */
+    border-bottom: 4px solid #3182ce; /* Línea abajo para mantener balance visual */
+}
+
+/* Efecto al pasar el cursor (mantiene el centrado) */
+.tarjeta-item:hover {
+    transform: translateY(-3px);
+    background-color: #edf2f7;
+    border-bottom-color: #dd6b20;
+}
+
+/* Centra el contenedor del teléfono */
+.telefono-contenedor {
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   SECCIÓN DE UBICACIÓN EXCLUSIVA (No afecta a otros elementos de la web)
+   ========================================================================== */
+
+/* Contenedor Principal: Centra todo el módulo en su sección */
+.seccion-ubicacion-contenedor {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    max-width: 1100px;
+    margin: 60px auto; /* Centra el bloque entero horizontalmente */
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06); /* Sombra suave y profesional */
+    box-sizing: border-box;
+}
+
+/* Título de la sección */
+.seccion-ubicacion-contenedor .titulo-ubicacion {
+    color: #27ae60; /* Verde institucional vibrante */
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+/* Línea decorativa debajo del título */
+.seccion-ubicacion-contenedor .titulo-ubicacion::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #e67e22; /* Naranja institucional para contraste continuo */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Subtítulo */
+.seccion-ubicacion-contenedor .subtitulo-ubicacion {
+    color: #555555;
+    font-size: 1.15rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px 0;
+    opacity: 0.8;
+}
+
+/* Distribución en rejilla (Mapa + Información a los lados) */
+.seccion-ubicacion-contenedor .ubicacion-contenido-flexible {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr; /* El mapa ocupa un poco más de espacio */
+    gap: 35px;
+    align-items: center;
+}
+
+/* Contenedor del Mapa Responsivo (Mantiene proporción 16:9) */
+.seccion-ubicacion-contenedor .mapa-responsivo {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%; 
+    height: 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.seccion-ubicacion-contenedor .mapa-responsivo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Tarjeta de Datos de Dirección Lateral */
+.seccion-ubicacion-contenedor .datos-direccion {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 5px solid #27ae60; /* Detalle de color superior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+/* Círculo blanco para el icono de mapa */
+.seccion-ubicacion-contenedor .icono-mapa {
+    font-size: 1.8rem;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    line-height: 1;
+}
+
+/* Contenedor interno del texto */
+.seccion-ubicacion-contenedor .bloque-texto-direccion {
+    flex: 1;
+}
+
+.seccion-ubicacion-contenedor .bloque-texto-direccion strong {
+    color: #27ae60;
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.seccion-ubicacion-contenedor .texto-direccion {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Botón Interactivo "¿Cómo llegar?" */
+.seccion-ubicacion-contenedor .btn-como-llegar {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #e67e22; /* Botón naranja llamativo */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
+    text-align: center;
+}
+
+/* Efecto hover profesional al pasar el cursor */
+.seccion-ubicacion-contenedor .btn-como-llegar:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.3);
+}
+
+/* --- DISEÑO RESPONSIVO (Para celulares y tabletas pequeñas) --- */
+@media (max-width: 768px) {
+    .seccion-ubicacion-contenedor {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    .seccion-ubicacion-contenedor .ubicacion-contenido-flexible {
+        grid-template-columns: 1fr; /* Cambia a una sola columna vertical */
+        gap: 25px;
+    }
+    .seccion-ubicacion-contenedor .titulo-ubicacion {
+        font-size: 1.9rem;
+    }
+    .seccion-ubicacion-contenedor .datos-direccion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .seccion-ubicacion-contenedor .btn-como-llegar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ESTILO EXCLUSIVO: BANNER EXCELENCIA (No afecta a otras páginas)
+   ========================================================================== */
+
+/* Contenedor para dar espacio y centrar el bloque en la página */
+.contenedor-frase-excelencia {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto; /* Centra el bloque entero horizontalmente */
+    padding: 20px;
+    text-align: center; /* Centra el texto por defecto */
+    box-sizing: border-box;
+}
+
+/* Diseño profesional para el título principal */
+#banner-excelencia {
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+    color: #2c3e50; /* Gris oscuro elegante para la primera parte */
+    font-size: 2.5rem; /* Tamaño grande y legible */
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
+    display: inline-block;
+}
+
+/* Estilo enfocado y con color vivo para la palabra clave */
+#banner-excelencia span {
+    color: #e67e22; /* Naranja institucional vibrante */
+    font-weight: 800; /* Más gruesa para resaltar */
+    display: block; /* Mueve la palabra abajo para un impacto visual de póster */
+    font-size: 3.2rem; /* Más grande para denotar importancia */
+    letter-spacing: 1px;
+    margin-top: 10px;
+    
+    /* Degradado sutil de color para máxima profesionalidad */
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- DISEÑO ADAPTABLE (Móviles y pantallas pequeñas) --- */
+@media (max-width: 768px) {
+    #banner-excelencia {
+        font-size: 1.8rem; /* Reduce el tamaño en celulares para que no se corte */
+    }
+    #banner-excelencia span {
+        font-size: 2.2rem;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   ESTILO EXCLUSIVO: LEMA FAMILIA CECYTE (No afecta a otras páginas)
+   ========================================================================== */
+
+/* Caja contenedora que centra el bloque en el sitio web */
+.contenedor-lema-familia {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto; /* Genera espacio arriba/abajo y centra horizontalmente */
+    padding: 30px 20px;
+    text-align: center; /* Centrado perfecto del texto */
+    box-sizing: border-box;
+}
+
+/* Estilo base del título principal */
+#lema-institucional {
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+    color: #34495e; /* Gris oscuro elegante y corporativo */
+    font-size: 2.6rem; /* Tamaño imponente y legible */
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Estilo de la marca corporativa (¡FAMILIA CECYTE!) */
+#lema-institucional .resaltado-cecyte {
+    display: block; /* Rompe el renglón para que baje y actúe como firma */
+    font-size: 3.5rem; /* Más grande para capturar la atención de inmediato */
+    font-weight: 800; /* Letra extra gruesa, estilo póster moderno */
+    margin-top: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    /* Efecto de Color Profesional: Degradado metálico institucional */
+    background: linear-gradient(135deg, #27ae60 0%, #1e824c 50%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Sombra tipográfica sutil para dar profundidad */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
+}
+
+/* --- AJUSTES OPTIMIZADOS PARA PANTALLAS MÓVILES --- */
+@media (max-width: 768px) {
+    #lema-institucional {
+        font-size: 1.8rem; /* Ajuste para que la frase quepa bien en celulares */
+    }
+    #lema-institucional .resaltado-cecyte {
+        font-size: 2.3rem; /* Escala proporcional para pantallas pequeñas */
+        letter-spacing: 1px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS: FRASES INSTITUCIONALES (CECYTE)
+   ========================================================================== */
+
+/* --- 1. CONFIGURACIÓN COMPARTIDA (Fuentes y Animación de Entrada) --- */
+.contenedor-frase-excelencia,
+.contenedor-lema-familia {
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto; /* Centrado horizontal y excelente separación de bloques */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* --- 2. DISEÑO: BANNER EXCELENCIA --- */
+#banner-excelencia {
+    color: #2c3e50; /* Gris Oxford muy elegante */
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+}
+
+#banner-excelencia span {
+    display: block; /* Baja el texto para crear un formato de póster moderno */
+    font-size: 3.8rem;
+    font-weight: 800; /* Letra ultra gruesa para máximo impacto */
+    letter-spacing: 2px;
+    margin-top: 12px;
+    
+    /* Degradado de Color Premium: Naranja fuego institucional */
+    background: linear-gradient(135deg, #e67e22 0%, #ff9f43 50%, #d35400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Sombra tipográfica sutil para dar volumen */
+    filter: drop-shadow(0px 4px 8px rgba(230, 126, 34, 0.15));
+}
+
+/* --- 3. DISEÑO: LEMA FAMILIA CECYTE --- */
+#lema-institucional {
+    color: #34495e;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    position: relative;
+}
+
+/* Línea sutil de separación intermedia */
+#lema-institucional::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e2e8f0;
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+#lema-institucional .resaltado-cecyte {
+    display: block;
+    font-size: 3.4rem;
+    font-weight: 900; /* Estilo de marca corporativa */
+    letter-spacing: 4px; /* Mayor separación entre letras para lucir imponente */
+    text-transform: uppercase;
+    
+    /* Degradado de Color Premium: Verde Esmeralda Institucional */
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 50%, #1e824c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    filter: drop-shadow(0px 4px 8px rgba(39, 174, 96, 0.15));
+}
+
+
+/* --- 4. DISEÑO RESPONSIVO (Ajuste automático para Celulares) --- */
+@media (max-width: 768px) {
+    .contenedor-frase-excelencia,
+    .contenedor-lema-familia {
+        margin: 40px auto;
+        padding: 10px;
+    }
+    
+    #banner-excelencia {
+        font-size: 1.6rem;
+    }
+    
+    #banner-excelencia span {
+        font-size: 2.4rem;
+        letter-spacing: 1px;
+    }
+    
+    #lema-institucional {
+        font-size: 1.5rem;
+    }
+    
+    #lema-institucional .resaltado-cecyte {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ESTILO EXCLUSIVO: FOOTER AGRADECIMIENTO CEMSAD (Protege tus otras páginas)
+   ========================================================================== */
+
+/* Contenedor principal: Establece el fondo oscuro premium y el centrado total */
+.footer-agradecimiento-cemsad {
+    font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1b262c 0%, #0f4c75 100%); /* Fondo azul profundo elegante */
+    padding: 50px 20px;
+    text-align: center; /* Centrado absoluto de textos y elementos */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 50px;
+    border-bottom: 6px solid #27ae60; /* Remate inferior con el verde oficial de CECyTEM */
+}
+
+/* Envoltura interna para controlar el ancho de lectura */
+.footer-agradecimiento-cemsad .bloque-central-agradecimiento {
+    max-width: 750px;
+    margin: 0 auto; /* Centra el bloque horizontalmente en la pantalla */
+}
+
+/* Estilo del texto base */
+.footer-agradecimiento-cemsad .texto-gratitud {
+    color: #f4f6f8; /* Blanco azulado suave de alta legibilidad */
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.3px;
+}
+
+/* Resalte de alta gama para el nombre del plantel */
+.footer-agradecimiento-cemsad .marca-institucional {
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Degradado metálico con el naranja creativo de la institución */
+    background: linear-gradient(135deg, #ffb37b 0%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Detalle de diseño: Línea minimalista de cierre */
+.footer-agradecimiento-cemsad .linea-decorativa-cemsad {
+    width: 60px;
+    height: 4px;
+    background-color: #27ae60; /* Verde institucional */
+    margin: 0 auto; /* Centrado horizontal de la línea */
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* --- AJUSTES DE OPTIMIZACIÓN MÓVIL --- */
+@media (max-width: 768px) {
+    .footer-agradecimiento-cemsad {
+        padding: 35px 15px;
+    }
+    .footer-agradecimiento-cemsad .texto-gratitud {
+        font-size: 1.15rem;
+        line-height: 1.5;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Contenedor principal del pie de página */
+.footer-comunidad-cecyte {
+    background-color: #1a252f; /* Fondo oscuro elegante */
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/* Contenedor interno para alinear elementos */
+.footer-contenido-centrado {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio entre el texto y el botón */
+}
+
+/* Texto de copyright estilizado y profesional */
+.footer-texto-invitacion {
+    color: #94a3b8; /* Gris claro que resalta sin molestar la vista */
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px; /* Separación elegante entre letras */
+    margin: 0;
+}
+
+/* Botón de acción moderno */
+.btn-unirse {
+    background-color: #e11d48; /* Color llamativo pero profesional */
+    color: #ffffff;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Bordes redondeados modernos */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* Efecto visual al pasar el mouse por encima del botón */
+.btn-unirse:hover {
+    background-color: #be123c;
+    transform: translateY(-2px); /* Pequeño movimiento hacia arriba */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+/* Contenedor principal del pie de página */
+.footer-comunidad-cecyte {
+    background-color: #1a252f; /* Fondo oscuro elegante */
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/* Contenedor interno para alinear elementos */
+.footer-contenido-centrado {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio entre el texto y el botón */
+}
+
+/* Texto de copyright estilizado y profesional */
+.footer-texto-invitacion {
+    color: #94a3b8; /* Gris claro que resalta sin molestar la vista */
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px; /* Separación elegante entre letras */
+    margin: 0;
+}
+
+/* Botón de acción moderno */
+.btn-unirse {
+    background-color: #e11d48; /* Color llamativo pero profesional */
+    color: #ffffff;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Bordes redondeados modernos */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* Efecto visual al pasar el mouse por encima del botón */
+.btn-unirse:hover {
+    background-color: #be123c;
+    transform: translateY(-2px); /* Pequeño movimiento hacia arriba */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}

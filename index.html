@@ -1,0 +1,101 @@
+
+    
+    <!DOCTYPE html>
+<html lang="es"> <!-- Cambiado a "es" para el idioma español del Cemsad 55 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="nuevo.css">
+    <title> 55 La YEGUAS </title>
+</head>
+
+<body>
+    <header>
+        <!-- quitamos los atributos de ancho fijos para que la cabecera se adapte mejor a cualquier pantalla -->
+        <img src="IMAGENES/channels4_banner.jpg" alt="Banner Cemsad 55" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+    </header>
+
+    <!-- Se eliminó la etiqueta <nav> duplicada que envolvía a tu barra -->
+    <nav class="navbar">
+        <div class="logo">Cemsad 55</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="direccion.html">Direccion</a></li>
+            <li><a href="contactos.html">contactos</a></li>
+            <li><a href="quienes somos.html">Quienes somos </a></li>
+        </ul>
+    </nav>
+
+    <main>
+      <!-- Tu título principal de bienvenida -->
+        <div class="con tenedor-i magen">
+            <h1 style="font-family: 'Segoe UI', sans-serif; color: #0b0f12; text-align: center; margin: 2rem 0;">
+                Bienvenidos a la página del Cemsad 55 las Yeguas
+            </h1>
+        </div>
+
+        <!-- IMAGEN 1: Se agrega la clase 'efecto-scroll' para activar la aparición suave -->
+        <div class="contenedor-imagen efecto-scroll">
+            <img src="IMAGENES/fts chicas.jpg" alt="Fotos de alumnos Cemsad 55" width="1000" height="400">
+        </div>
+
+        <!-- IMAGEN 2: Se agrega la clase 'efecto-scroll' -->
+        <div class="contenedor-imagen efecto-scroll">
+            <img src="IMAGENES/entrada.jpeg" alt="Entrada del plantel" width="1000" height="400">
+        </div>
+
+        <!-- IMAGEN 3: Se agrega la clase 'efecto-scroll' -->
+        <div class="contenedor-imagen efecto-scroll">
+            <img src="IMAGENES/porton.jpeg" alt="Portón de la escuela" width="1000" height="400">
+        </div>
+    </main>
+
+    <!-- ==========================================================================
+       SCRIPT JAVASCRIPT: Detecta el scroll y activa la animación de tus imágenes
+       ========================================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Configuración del sensor de pantalla
+            const opciones = {
+                root: null, // Usa la pantalla del navegador
+                rootMargin: "0px", 
+                threshold: 0.15 // La imagen aparece suavemente cuando se asoma un 15% en pantalla
+            };
+
+            const verificarEntrada = (entradas, observador) => {
+                entradas.forEach((entrada) => {
+                    // Si el usuario bajó el scroll y llegó a la imagen
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add("visible"); // Agrega la clase que la vuelve visible
+                        observador.unobserve(entrada.target); // Deja de vigilarla para mantener el rendimiento
+                    }
+                });
+            };
+
+            // Activa el observador nativo
+            const observador = new IntersectionObserver(verificarEntrada, opciones);
+
+            // Selecciona de forma automática todas las imágenes del Cemsad que tengan la clase efecto-scroll
+            const imagenesParaAnimar = document.querySelectorAll(".efecto-scroll");
+            imagenesParaAnimar.forEach((imagen) => observador.observe(imagen));
+        });
+    </script>
+
+ 
+
+
+<!-- Pie de página exclusivo para esta sección -->
+<footer class="footer-comunidad-cecyte">
+    <div class="footer-contenido-centrado">
+        <p class="footer-texto-invitacion">
+            &copy; 2026 CECyTE. Todos los derechos reservados.
+        </p>
+        <!-- Botón de acción profesional -->
+        <a href="#inscripciones" class="btn-unirse">¡Inscríbete Ahora!</a>
+    </div>
+</footer>
+</body>
+</html>

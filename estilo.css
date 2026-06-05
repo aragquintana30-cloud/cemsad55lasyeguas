@@ -1,0 +1,211 @@
+/* Configuración base de la barra */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b0f12; /* Fondo oscuro profesional para resaltar los colores */
+  padding: 1rem 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Estilo del Logo */
+.logo {
+  color: #2ecc71; /* Verde brillante profesional */
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Interactividad en el Logo */
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+}
+
+/* Contenedor de enlaces horizontal */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem; /* Espaciado premium entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo base de los enlaces */
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Línea interactiva oculta debajo de cada enlace */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2ecc71, #ff6b1a); /* Degradado verde a naranja */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* --- INTERACCIONES (HOVER) --- */
+
+/* Cambio de color del texto al pasar el mouse */
+.nav-links a:hover {
+  color: #ff6b1a; /* Cambia a naranja */
+}
+
+/* La línea se expande desde la izquierda al pasar el mouse */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Efecto de clic activo para dar feedback al usuario */
+.nav-links a:active {
+  transform: scale(0.95);
+  color: #2ecc71;
+}
+/* 1. Modifica tu barra principal */
+.navbar {
+  display: flex;
+  flex-direction: column; /* Alinea el logo arriba y el menú abajo en bloques */
+  align-items: center;    /* Centra el logo y el menú horizontalmente */
+  justify-content: center;
+  gap: 1.5rem;            /* Da un espacio elegante entre el logo y los enlaces */
+  background-color: #0b0f12; 
+  padding: 1.5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 2. Modifica el contenedor de tus enlaces */
+.nav-links {
+  display: flex;
+  justify-content: center; /* Centra los enlaces entre sí */
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;            /* Mantiene la separación horizontal entre opciones */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.contenedor-imagen {
+  display: flex;
+  justify-content: center;  /* Centra la imagen horizontalmente */
+  align-items: center;      /* La alinea al centro verticalmente si el contenedor tiene alto */
+  padding: 2rem 0;          /* Agrega un espacio elegante arriba y abajo de la imagen */
+  width: 100%;              /* Asegura que el contenedor use todo el ancho disponible */
+}
+
+.contenedor-imagen img {
+  max-width: 100%;          /* Hace que la imagen sea responsiva y no se desborde en celulares */
+  height: auto;             /* Mantiene la proporción correcta de la imagen */
+  border-radius: 12px;      /* Bordes ligeramente redondeados para un look más profesional */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave para darle profundidad */
+}
+
+.contenedor-foto {
+  width: 300px;
+  height: 200px;
+  overflow: hidden; /* Corta el exceso de la imagen */
+  border-radius: 8px;
+}
+
+
+
+/* ==========================================================================
+   ESTILO EXCLUSIVO: FOOTER COMUNIDAD (Protege tus otras páginas)
+   ========================================================================== */
+
+/* Contenedor principal del pie de página */
+.footer-comunidad-cecyte {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1e272e 0%, #2c3e50 100%); /* Fondo oscuro premium */
+    padding: 60px 20px;
+    text-align: center; /* Centrado perfecto de todos los elementos */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60px;
+    border-top: 4px solid #27ae60; /* Detalle superior en verde institucional */
+}
+
+/* Envoltura interna para limitar el ancho del texto */
+.footer-comunidad-cecyte .footer-contenido-centrado {
+    max-width: 800px;
+    margin: 0 auto; /* Centra el bloque de texto horizontalmente */
+}
+
+/* Diseño del texto de invitación */
+.footer-comunidad-cecyte .footer-texto-invitacion {
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0 0 30px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Palabra clave con color brillante y vivo */
+.footer-comunidad-cecyte .resaltado-excelencia {
+    font-weight: 700;
+    color: #e67e22; /* Naranja vibrante para romper la monotonía */
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff9f43 0%, #e67e22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Botón interactivo moderno */
+.footer-comunidad-cecyte .btn-unirse {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #27ae60; /* Verde institucional */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Animación profesional al pasar el mouse por el botón */
+.footer-comunidad-cecyte .btn-unirse:hover {
+    background-color: #219150;
+    transform: translateY(-3px); /* Efecto de elevación suave */
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* --- DISEÑO RESPONSIVO (Ajuste automático para teléfonos) --- */
+@media (max-width: 768px) {
+    .footer-comunidad-cecyte {
+        padding: 40px 15px;
+    }
+    .footer-comunidad-cecyte .footer-texto-invitacion {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .footer-comunidad-cecyte .btn-unirse {
+        width: 100%; /* El botón ocupa todo el ancho en pantallas chicas */
+        box-sizing: border-box;
+    }
+}
